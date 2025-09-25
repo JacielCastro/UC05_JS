@@ -26,8 +26,25 @@ export class ContaBancaria{
         this.numeroConta = numeroConta01
     } 
     get numeroConta (){
-        return 
+        return this.numeroConta 
     }
-
+    set numeroAgencia (numeroAgencia01){
+        this.numeroAgencia = numeroAgencia01
+    }
+    get numeroAgencia(){
+        return this.numeroAgencia
+    }
+    set saldo (saldo_cliente){
+        this.#saldo = saldo_cliente
+    }
+    get saldo (){
+        return this.#saldo
+    }
+    set dataAbertura(dataAbertura01){
+        this.dataAbertura = dataAbertura01
+    }
+    get dataAbertura(){
+        return this.dataAbertura
+    }
 
 } 
