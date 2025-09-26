@@ -46,5 +46,8 @@ export class ContaBancaria{
     get dataAbertura(){
         return this.dataAbertura
     }
-
+    sacar(valor){
+        
+    }
+    
 } 
