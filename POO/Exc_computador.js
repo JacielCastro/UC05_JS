@@ -28,11 +28,13 @@ export class memoria{
     get capacidade(){
         return this.#capacidade
     }
-    usarMemoria(){ // simula o uso de uma quantidade de memória 
-
+    usarMemoria(qtd){ // simula o uso de uma quantidade de memória 
+        let result = this.#capacidade - qtd
+        console.log(result);
     }
-    liberarMemoria(){ // simula a liberação de memória 
-
+    liberarMemoria(qtd){ // simula a liberação de memória 
+        let libera = this.#capacidade + qtd
+        console.log(libera);
     }
 }
 
@@ -74,8 +76,9 @@ export class processador{
 
     }
     
-    executarprograma(){ // simula a execução de um programa
-
+    executarprograma(programa){ // simula a execução de um programa
+        console.log(`${programa} Programa iniciado`);
+        
     }
 }
 
@@ -109,7 +112,7 @@ export class Armazenamento{
     }
 
     espacoLivre(){ // calcula o espaço disponivel
-
+        
     }
 }
 
@@ -117,10 +120,26 @@ export class tela{ // ligar a tela
     #tamanho
     #resolucao
 
-    ligar(){
+    constructor (tamanho,resolucao){
+        this.#tamanho = tamanho
+        this.#resolucao = resolucao
+    }
+    set tamanho (tamanho01){
+        this.#tamanho = tamanho01
+    }
+    get tamanho(){
+        return this.#tamanho
+    }
+    set resolucao( resolucao01){
+        this.#resolucao = resolucao01
+    }
+    get resolucao(){
+        return this.#resolucao
+    }
+    ligar(){ // ligar a tela do computador
 
     }
-    desligar(){ // desligar a tela
+    desligar(){ // desligar a tela do computador 
 
     }
 
@@ -133,8 +152,29 @@ export class computador{
     Armazenamento
     tela
     
-    imprimeFichatecnica(){ // imprime  todos as caracteristica do computador 
+    constructor(marca,modelo,memoria,processador,Armazenamento,tela){
+        this.#marca = marca
+        this.#modelo = modelo
+        this.memoria = memoria
+        this.processador = processador
+        this.Armazenamento = Armazenamento
+        this.tela = tela
+    }
+    set marca ( marca01 ){
+        this.#marca = marca01
+    }
+    get marca(){
+        return this.#marca 
+    }
+    set modelo(modelo01){
+        this.#modelo = modelo01
+    }
+    get modelo (){
+        return this.#modelo
+    }
 
+    imprimeFichatecnica(){ // imprime  todos as caracteristica do computador 
+        
     }
     instalarSoftware(nome){ // instala (insere em um array) o software passado por parâmetro e informa ao usuario
 
