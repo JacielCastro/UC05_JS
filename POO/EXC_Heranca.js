@@ -32,11 +32,38 @@ export class Funcionario extends Pessoa{
         this.#matricula = matricula
     }
     calculo_horaExtra(qtd_hora){
-        let salario_hrs_Ext,qtd_hora, valor_h = 15, vlr_ttl_h
+        let salario_hrs_Ext,valor_h = 15, vlr_ttl_h
         vlr_ttl_h = qtd_hora * valor_h
         salario_hrs_Ext = this.#salario + vlr_ttl_h
 
-        console.log(`O valor total do salario com as horas extras --> ${salario_hrs_Ext}`);
-        
+        console.log(`O valor total do salario com as horas extras --> ${salario_hrs_Ext}`);    
+    }
+    mostrar_informacoes(){  // Mostra todas as informações da pessoa
+        super.mostrar_informacoes()
+        console.log(`--> ${this.cargo}\n--> ${this.#salario}\n--> ${this.#matricula}`);  
     }
 }
+
+export class Gerente extends Funcionario{
+    setor
+    quantidadesEquipe
+
+    constructor(nome,cpf,data_nascimento,cargo,salario,matricula, setor,quantidadesEquipe){
+        super(nome,cpf,data_nascimento,cargo,salario,matricula)
+        this.setor = setor
+        this.quantidadesEquipe = quantidadesEquipe
+    }
+    calculoBonificacao() { // CALCULANDO A POCENTAGEM DO BONUS DO GERENTE  
+        let bonus
+        if (this.quantidadesEquipe >= 10) {
+            bonus = this.salario * 0.15
+        }else{
+           bonus = this.salario * 0.7
+        }
+        console.log(bonus);
+    }
+    mostrar_informacoes(){  // Mostra todas as informações da pessoa
+        super.mostrar_informacoes()
+        console.log(`--> ${this.setor}\n--> ${this.quantidadesEquipe}`);  
+    }
+} 
