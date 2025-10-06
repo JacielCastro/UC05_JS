@@ -56,7 +56,7 @@ export class Gerente extends Funcionario{
     calculoBonificacao() { // CALCULANDO A POCENTAGEM DO BONUS DO GERENTE  
         let bonus
         if (this.quantidadesEquipe >= 10) {
-            bonus = this.salario * 0.15
+            bonus = this.salario * 0.15 // THIS.SALARIO SE REFERE AO ATRIBUTO DA CLASSE E NÃO AVARIAVEL QUE FOI CRIADA
         }else{
            bonus = this.salario * 0.7
         }

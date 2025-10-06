@@ -4,7 +4,7 @@ export class memoria{
     #tipo
     #frequencia
     #capacidade
-
+    
     constructor(tipo,frequencia,capacidade){
         this.#tipo = tipo
         this.#frequencia = frequencia
@@ -73,12 +73,10 @@ export class processador{
     }
     get velocidade(){
         return this.#velocidade
-
     }
     
     executarprograma(programa){ // simula a execução de um programa
-        console.log(`${programa} Programa iniciado`);
-        
+        console.log(`${programa} Programa iniciado`);    
     }
 }
 
