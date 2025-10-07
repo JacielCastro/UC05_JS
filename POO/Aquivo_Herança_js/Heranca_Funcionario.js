@@ -1,25 +1,4 @@
 
-export class Pessoa {
-    nome 
-    #cpf
-    data_nascimento
-
-    constructor(nome,cpf,data_nascimento){
-        this.nome = nome
-        this.#cpf = cpf
-        this.data_nascimento = data_nascimento
-    }
-
-    set cpf (cpf01){
-        this.#cpf = cpf01
-    }
-    get cpf (){
-        return this.#cpf
-    }
-    mostrar_informacoes(){  // Mostra todas as informações da pessoa
-        console.log(`--> ${this.nome}\n--> ${this.cpf}\n--> ${this.data_nascimento}`);  
-    }
-}
 export class Funcionario extends Pessoa{
     cargo
     #salario
@@ -31,6 +10,19 @@ export class Funcionario extends Pessoa{
         this.#salario = salario
         this.#matricula = matricula
     }
+    set salario(salario01){
+        this.#salario = salario01
+    }
+    get salario (){
+        return this.#salario
+    }
+    set matricula (matricula01){
+        this.#matricula = matricula01
+    }
+    get matricula (){
+        return this.#matricula 
+    }
+
     calculo_horaExtra(qtd_hora){
         let salario_hrs_Ext,valor_h = 15, vlr_ttl_h
         vlr_ttl_h = qtd_hora * valor_h
@@ -54,13 +46,14 @@ export class Gerente extends Funcionario{
         this.quantidadesEquipe = quantidadesEquipe
     }
     calculoBonificacao() { // CALCULANDO A POCENTAGEM DO BONUS DO GERENTE  
-        let bonus
+        let bonus = 0, salario_atual
         if (this.quantidadesEquipe >= 10) {
             bonus = this.salario * 0.15 // THIS.SALARIO SE REFERE AO ATRIBUTO DA CLASSE E NÃO AVARIAVEL QUE FOI CRIADA
         }else{
            bonus = this.salario * 0.7
         }
-        console.log(bonus);
+        salario_atual = this.salario + bonus
+        console.log(`Salario --> ${this.salario}\nBonus de equipe --> ${bonus}\nSalario bruto --> ${salario_atual}`);
     }
     mostrar_informacoes(){  // Mostra todas as informações da pessoa
         super.mostrar_informacoes()

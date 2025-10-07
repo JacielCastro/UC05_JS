@@ -1,5 +1,5 @@
 import PromptSync from "prompt-sync";
-import {Pessoa,Funcionario,Gerente } from "../Aquivo_Herança_js/EXC_Heranca.js";
+import {Pessoa,Funcionario,Gerente } from "../Aquivo_Herança_js / Exc_Heranca.js";
 
 const prompt = PromptSync()
 
