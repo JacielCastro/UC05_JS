@@ -1,10 +1,8 @@
 import PromptSync from "prompt-sync";
-import { ContaBancaria } from "../Aquivo_classes_js/Classe_conta_bancaria";
+import { Atributos } from "../Funções_js/Function.js";
+import { ContaBancaria } from "../Aquivo_classes_js/Classe_conta_bancaria.js";
 const prompt = PromptSync()
 
-let cliente = new ContaBancaria(
-    prompt ('Informe o seu nome: '),
-    Number (prompt ('Digite o número da sua conta: ')),
-    Number (prompt ('Digite o número da sua agencia: ')),
-    prompt ('Digiti a data da abertura da sua conta: ')
-)
+let cliente = new ContaBancaria()
+Atributos();
+  
