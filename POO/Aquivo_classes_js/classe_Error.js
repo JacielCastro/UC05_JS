@@ -1,6 +1,0 @@
-class Erro {
-    
-    constructor(parameters) {
-        
-    }
-}

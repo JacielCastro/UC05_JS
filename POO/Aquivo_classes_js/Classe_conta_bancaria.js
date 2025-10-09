@@ -1,6 +1,5 @@
 import PromptSync from "prompt-sync";
 const prompt = PromptSync()
-let valor
 
 export class ContaBancaria{
     #nomeTitular
@@ -10,6 +9,7 @@ export class ContaBancaria{
     dataAbertura
 
     constructor(nomeTitula,numeroConta,numeroAgencia,saldo,dataAbertura){
+        
         this.#nomeTitular = nomeTitula
         this.numeroConta = numeroConta
         this.numeroAgencia = numeroAgencia
@@ -29,10 +29,21 @@ export class ContaBancaria{
         return this.#saldo
     }
     Deposita(valor){
+        let saldo,saldo_atual
+        valor = prompt("Informe o valor que deseja Deposita: ")
         if (valor > 0) {
-            saldo = this.saldo + valor
+            saldo = saldo + valor
+            saldo_atual = prompt("Gostaria de saber o saldo de sua conta atualizado? (sim ou não)? ").toLowerCase()
+            if (saldo_atual === "sim") {
+                console.log(Data.toLocaleString('pt-BR'))
+                console.log(`Saldo em conta --> ${saldo}`)
+            } else {
+                console.log("Obrigado pelo uso do nosso serviços !!! ");  
+            }
+            
         } else {
-            console.log(`Tentativa do deposito invalido !!\nValor que estar tentando deposita --> ${valor}`); 
+           // console.log(`Tentativa do deposito invalido !!\nValor que estar tentando deposita --> ${valor}`); 
+            throw new contabancaria_Error(`Tentativa do deposito invalido !!\nValor que estar tentando deposita --> ${valor}`) // REALIZANDO O LANÇAMENTO DE ERROR 
         }
     }
     sacar(valor){
