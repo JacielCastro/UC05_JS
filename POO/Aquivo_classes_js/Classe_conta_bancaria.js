@@ -27,23 +27,20 @@ export class ContaBancaria{
     }
     get saldo (){
         return this.#saldo
-    }
+    }1
     Deposita(valor){
-        let saldo,saldo_atual
-        valor = prompt("Informe o valor que deseja Deposita: ")
-        if (valor > 0) {
-            saldo = saldo + valor
-            saldo_atual = prompt("Gostaria de saber o saldo de sua conta atualizado? (sim ou não)? ").toLowerCase()
-            if (saldo_atual === "sim") {
-                console.log(Data.toLocaleString('pt-BR'))
-                console.log(`Saldo em conta --> ${saldo}`)
+        let saldo_atual,extrato,deposito
+        deposito = prompt("Informe o valor que deseja Deposita: ")
+        if (deposito > 0) {
+            saldo_atual = this.#saldo + deposito
+            extrato = prompt("Gostaria de saber o saldo de sua conta atualizado? (sim ou não)? ").toLowerCase()
+            if (extrato === "sim") {
+                console.log(`Saldo em conta --> ${saldo_atual}`)
             } else {
                 console.log("Obrigado pelo uso do nosso serviços !!! ");  
-            }
-            
+            }    
         } else {
-           // console.log(`Tentativa do deposito invalido !!\nValor que estar tentando deposita --> ${valor}`); 
-            throw new contabancaria_Error(`Tentativa do deposito invalido !!\nValor que estar tentando deposita --> ${valor}`) // REALIZANDO O LANÇAMENTO DE ERROR 
+            throw new ContaBancaria(`Valor do deposito invalido. Exemplo --> (R$ 20 ou mais o valor) ${deposito}`) // REALIZANDO O LANÇAMENTO DE ERROR 
         }
     }
     sacar(valor){
@@ -51,6 +48,5 @@ export class ContaBancaria{
     }
     calculaRendimento(){
 
-    }
-    
+    }    
 } 
