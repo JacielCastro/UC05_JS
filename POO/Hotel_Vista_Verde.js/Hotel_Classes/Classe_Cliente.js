@@ -1,7 +1,8 @@
 import PromptSync from "prompt-sync";
 const prompt = PromptSync()
 import function_Hotel from "../Hotel_Function/Function_Hotel.js"
-export class Cliente {
+import { Hotel } from "./Classes_Hotel.js";
+export class Cliente extends Hotel{
     #cpf
     nome
     #contato

@@ -1,19 +1,20 @@
 import PromptSync from "prompt-sync";
+import { Quarto } from "./Classe_Quarto.js";
 const prompt = PromptSync()
 
 export class Hotel{
-    nome
-    Quarto
-    Reserva
-
-    constructor(nome,Quarto,Reserva){
+  
+    constructor(nome,quarto = [],reserva = []){
         this.nome = nome
-        this.Quarto = Quarto
-        this.Reserva = Reserva
+        this.quartos = quarto
+        this.reservas = reserva
     }
-    adicionarQuarto(numero){  
+    adicionarQuarto(numero,tipo){
+        let quarto = new Quarto(numero,tipo) 
+        this.quartos.push(quarto)
+        // console.log(this.quartos);      
+    }
 
-    } 
     reservaQuarto(quarto,data,cliente){
 
     }
@@ -21,6 +22,8 @@ export class Hotel{
 
     }
     listarQuartoDisponiveis(){
+        console.log(this.quartos);
+        
 
     }
     listaTodasReservas(){
