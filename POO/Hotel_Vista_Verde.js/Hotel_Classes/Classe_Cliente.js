@@ -4,9 +4,7 @@ import function_Hotel from "../Hotel_Function/Function_Hotel.js"
 import { Hotel } from "./Classes_Hotel.js";
 export class Cliente extends Hotel{
     #cpf
-    nome
     #contato
-
     constructor(cpf,nome_Cliente,contato){
         this.#cpf = cpf
         this.nome = nome_Cliente
