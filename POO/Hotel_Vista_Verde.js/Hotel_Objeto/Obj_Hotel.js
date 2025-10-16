@@ -1,6 +1,5 @@
 import PromptSync from "prompt-sync";
 import { Hotel } from "../Hotel_Classes/Classes_Hotel.js";
-import { Reserva } from "../Hotel_Classes/Classe_Reserva.js";
 const Prompt = PromptSync()
 
 
@@ -16,6 +15,5 @@ hotel.adicionarQuarto(30,"solteiro")
 hotel.adicionarQuarto(15,"familia")
 hotel.listarQuartoDisponiveis()
 
-let res_cliente = new Reserva()
-res_cliente.reservaQuarto(25,"20/10/2025","Jaciel Castro")
+hotel.reservaQuarto(25,"20/10/2025","Jaciel Castro") // ESTOU ADICIONANDO O UMA RESERVA NO HOTEL, ATRAVES DE UM METODO NA CLASSE HOTEL
 // res_cliente.listarTodasReservas()
