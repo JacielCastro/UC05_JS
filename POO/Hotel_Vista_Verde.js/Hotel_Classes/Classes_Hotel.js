@@ -15,17 +15,27 @@ export class Hotel{
         // console.log(this.quartos);      
     }
     reservaQuarto(quarto,data,cliente){
+        function criandoDiretorio(nome) {
+        try {
+            fs.mkdirSync(listas_Reservas)
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
         let reserva = new Reserva(quarto,data,cliente)
         this.reservas.push(reserva)
+        //this.reservas.push()
         console.log(this.reservas)
     }
     concelarReserva(quarto,data){
 
     }
     listarQuartoDisponiveis(){
+        console.log("\n=== LISTA QUARTOS DISPONIVEIS ===");
         console.log(this.quartos);
     }
     listaTodasReservas(){
+        console.log("\n=== LISTA DE TODAS AS RESERVAS ===");
         console.log(this.reservas);   
     }
     informacoesReserva(){

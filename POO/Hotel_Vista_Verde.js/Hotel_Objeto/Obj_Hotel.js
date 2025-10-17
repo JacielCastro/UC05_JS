@@ -10,10 +10,9 @@ console.log(`  ===== SEJA BEM VINDO AO HOTEL VISTA VERDE =====
 
     
 let hotel = new Hotel ()
-hotel.adicionarQuarto(30,"solteiro")
-// hotel.listarQuartoDisponiveis()
-hotel.adicionarQuarto(15,"familia")
+//hotel.adicionarQuarto(30,"solteiro")
+//hotel.adicionarQuarto(15,"familia")
 hotel.listarQuartoDisponiveis()
-
 hotel.reservaQuarto(25,"20/10/2025","Jaciel Castro") // ESTOU ADICIONANDO O UMA RESERVA NO HOTEL, ATRAVES DE UM METODO NA CLASSE HOTEL
-// res_cliente.listarTodasReservas()
+hotel.listaTodasReservas()
+
